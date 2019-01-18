@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Mi Turno{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+{% block headers %}
+<h3>Mis Turnos</h3>
+<span class="subheading">Consultorio</span>
+{% endblock %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>			
+			<td>Fecha y Hora de Turno</td>
+			<td>Acciones</td>			
+		</tr>
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for turno in object_list %}
+		<tr>
+			<td>{{ turno.fecha }}</td>						
+			<td>				
+				<a class="btn btn-danger" href="{% url 'turnos:turnos_eliminar' turno.id %}">Cancelar</a>
+			</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No tiene turnos reservados.</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

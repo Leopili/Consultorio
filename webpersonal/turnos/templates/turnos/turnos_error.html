@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Mi Turno{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+{% block headers %}
+<h3>Error</h3>
+<span class="subheading">Consultorio</span>
+{% endblock %}
+
+{% block content %}
+
+	<div class="col-md-8 col-md-offset-2">
+			<div align="center">
+				<p><b>Usted ya posee un turno reservado</b></p>
+			</div>
+	<div align=center class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<a class="btn btn-primary"href="{% url 'turnos:turno_paciente' %}">Regresar</a>
+			</div>
+
+{% endblock %}

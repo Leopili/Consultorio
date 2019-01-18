@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	
+	<div class="row">		
+		<div class="col-md-6 col-md-offset-8">
+			<div class="form-group">
+				<label for="{{form.turno.fecha}}">{{form.fecha.label}}</label>{{form.fecha}}			
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit">Cancelar Turno</button>
+		</div>
+	</div>
+</form>
+{% endblock %}

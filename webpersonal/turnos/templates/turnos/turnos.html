@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Turnos{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Turnos</h1>
+<span class="subheading">Consultorio</span>
+{% endblock %}
+{% block content %}  
+  <thead>
+    <tr>
+      <td><a class="btn btn-primary" type="submit" href="{% url 'turnos:turnos_listar' %}">Turnos Disponibles<a/></td>
+      <td><a class="btn btn-primary" type="submit" href="{% url 'turnos:turno_paciente' %}">Mis Turnos<a/></td>      
+    </tr>
+  </thead>  
+{% endblock %}  

@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Turnos{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Turnos</h1>
+<span class="subheading">Consultorio</span>
+{% endblock %}
+{% block content %}
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Fecha y Hora de Turno</td>
+      <td>Estado</td>      
+    </tr>
+  </thead>
+  <tbody>
+    {% if object_list %}
+    {% for turno in object_list %}
+    <tr>
+      <td>{{ turno.fecha }}</td>      
+      <td>      
+        <div class="form-group">          
+          <a class="btn btn-primary" type="submit" href="{% url 'turnos:turnos_reservar' turno.id %}">Reservar<a/>
+        </div>      
+      </td>
+    </tr>    
+    {% endfor %}
+    {% else %}
+      <h1>No hay Turnos disponibles</h1>
+    {% endif %}
+  </tbody>
+</table>
+{% endblock %}  
