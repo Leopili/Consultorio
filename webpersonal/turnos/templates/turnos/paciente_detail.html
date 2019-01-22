@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Perfil{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+{% block headers %}
+<h3>Mis Datos</h3>
+<span class="subheading">Consultorio</span>
+{% endblock %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<tr>
+	    <th scope="row">Datos</th>
+	    <th></th>
+	</tr>
+	<tr>
+	    <th>Nombre</th>
+	    <td>{{paciente.nombre}}</td>
+	</tr>
+	<tr>
+	    <th>Apellido</th>
+	    <td>{{paciente.apellido}}</td>
+	</tr>
+	<tr>
+	    <th>DNI</th>
+	    <td>{{paciente.dni}}</td>
+	</tr>
+	<tr>
+	    <th>Domicilio</th>
+	    <td>{{paciente.domicilio}}</td>
+	</tr>
+	<tr>
+	    <th>Telefono</th>
+	    <td>{{paciente.telefono}}</td>
+	</tr>
+	<tr>
+	    <th>Obra Social</th>
+	    <td>{{paciente.obra_social}}</td>
+	</tr>	
+	
+</table>
+
+
+{% endblock%}

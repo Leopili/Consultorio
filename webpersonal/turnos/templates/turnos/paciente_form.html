@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Turnos{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+
+{% block headers %}
+	<h1>Turnos</h1>
+	<span class="subheading">Consultorio</span>
+{% endblock %}
+
+{% block content %}  
+	<form method="post">{% csrf_token %}
+	    {{ form.as_p }}
+	    <input type="submit" value="Actualizar">
+	</form>  
+{% endblock %}  

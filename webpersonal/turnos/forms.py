@@ -1,5 +1,5 @@
 from django import forms
-from turnos.models import Turno
+from turnos.models import Turno, Paciente
 
 class TurnoForm(forms.ModelForm):
 	
