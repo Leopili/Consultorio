@@ -9,21 +9,22 @@
 <span class="subheading">Consultorio</span>
 {% endblock %}
 {% block content %}
-  <table class="table table-bordered">
+  <table  class="table table-bordered">
   <thead>
-    <tr>
-      <td>Fecha y Hora de Turno</td>
-      <td>Estado</td>      
+    <tr style="background:GAINSBORO;justify-content: center;text-align:center;font-weight: 600; color:black">
+      <td style="border-bottom:3px solid #777;border-top:3px solid #777;border-left:3px solid #777;border-right:3px solid #777">Fecha y Hora de Turno</td>
+      <td style="border-bottom:3px solid #777;border-top:3px solid #777;border-right:3px solid #777">Estado</td>      
     </tr>
   </thead>
-  <tbody>
+  <tbody style="vertical-align: middle;text-align:center;">
     {% if object_list %}
     {% for turno in object_list %}
-    <tr>
-      <td>{{ turno.fecha }}</td>      
-      <td>      
+    <tr style="border-left:3px solid #777;border-bottom:3px solid #777">
+      <td style="border-bottom:3px solid #777;border-right:3px solid #777">{{ turno.fecha }}</td>      
+      <td style="border-right:3px solid #777">      
         <div class="form-group">          
-          <a class="btn btn-primary" type="submit" href="{% url 'turnos:turnos_reservar' turno.id %}">Reservar<a/>
+          <a style="padding: 10px;font-weight: 600;font-size: 15px;color: #ffffff;
+    background-color: #1883ba;border-radius: 6px;border: 2px solid #0016b0;" class="btn btn-primary" type="submit" href="{% url 'turnos:turnos_reservar' turno.id %}">Reservar<a/>
         </div>      
       </td>
     </tr>    

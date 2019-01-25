@@ -11,17 +11,17 @@
 
 <table class="table table-bordered">
 	<thead>
-		<tr>			
-			<td>Fecha y Hora de Turno</td>
-			<td>Acciones</td>			
+		<tr style="background:GAINSBORO;justify-content: center;text-align:center;font-weight: 600; color:black">			
+			<td style="border-bottom:3px solid #777;border-top:3px solid #777;border-left:3px solid #777;border-right:3px solid #777">Fecha y Hora de Turno</td>
+			<td style="border-bottom:3px solid #777;border-top:3px solid #777;border-right:3px solid #777">Acciones</td>			
 		</tr>
 	</thead>
-	<tbody>
+	<tbody style="vertical-align: middle;text-align:center;">
 		{% if object_list %}
 		{% for turno in object_list %}
-		<tr>
-			<td>{{ turno.fecha }}</td>						
-			<td>				
+		<tr style="border-left:3px solid #777;border-bottom:3px solid #777">
+			<td style="border-bottom:3px solid #777;border-right:3px solid #777">{{ turno.fecha }}</td>						
+			<td style="border-right:3px solid #777">				
 				<a class="btn btn-danger" href="{% url 'turnos:turnos_eliminar' turno.id %}">Cancelar</a>
 			</td>
 		</tr>
