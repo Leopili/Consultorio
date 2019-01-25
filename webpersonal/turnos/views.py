@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, UpdateView, CreateView, DetailView
 from turnos.models import Turno, Paciente
-from turnos.forms import TurnoForm, CancelarTurnoForm
+from turnos.forms import TurnoForm, CancelarTurnoForm, PacienteForm
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect, HttpResponse
 from django.db import IntegrityError
@@ -104,7 +104,7 @@ def PacienteDetail(request, username):
 
 class PacienteUpdate(UpdateView):
 	model = Paciente
-	fields = ['nombre','apellido','dni','telefono','domicilio','obra_social']
+	form_class = PacienteForm	
 	success_url = reverse_lazy('inicio')
 	template_name = 'turnos/paciente_form.html'
 	

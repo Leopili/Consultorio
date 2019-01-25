@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block title %}Iniciar sesión{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/login.jpg' %}{% endblock %}
 {% block content %}
   {% if request.user.is_authenticated %}
     <script>window.location.href = '/accounts/profile/'; </script>

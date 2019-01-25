@@ -2,16 +2,37 @@
 
 {% block title %}Turnos{% endblock %}
 
-{% block background %}{% load static %}{% static 'core/img/turnos.jpg' %}{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/datos.jpg' %}{% endblock %}
 
 {% block headers %}
-	<h1>Turnos</h1>
-	<span class="subheading">Consultorio</span>
+	<h2>Datos Personales</h2>
+	<span class="subheading">{{request.user}}</span>
 {% endblock %}
 
 {% block content %}  
-	<form method="post">{% csrf_token %}
-	    {{ form.as_p }}
-	    <input type="submit" value="Actualizar">
-	</form>  
+<form method="post">{% csrf_token %}
+<div class="row">		
+<div class="col-md-6 col-md-offset-8">
+<div class="form-group">
+<label for="{{form.paciente.nombre}}">{{form.nombre.label}}</label>{{form.nombre}}			
+</div>			
+<div class="form-group">
+<label for="{{form.paciente.apellido}}">{{form.apellido.label}}</label>{{form.nombre}}			
+</div>			
+<div class="form-group">
+<label for="{{form.paciente.dni}}">{{form.dni.label}}</label>{{form.dni}}	
+</div>
+<div class="form-group">
+<label for="{{form.paciente.telefono}}">{{form.telefono.label}}</label>{{form.telefono}}			
+</div>
+<div class="form-group">
+<label for="{{form.paciente.domicilio}}">{{form.domicilio.label}}</label>{{form.domicilio}}			
+</div>	
+<div class="form-group">
+<label for="{{form.paciente.obra_social}}">{{form.obra_social.label}}</label>{{form.obra_social}}			
+</div>	
+</div>
+</div>
+<input type="submit" value="Actualizar">
+</form>  
 {% endblock %}  
