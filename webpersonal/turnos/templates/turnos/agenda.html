@@ -20,8 +20,12 @@
     {% if object_list %}
     {% for turno in object_list %}    
     <tr style="border-left:3px solid #777;border-bottom:3px solid #777">
-      <td style="border-bottom:3px solid #777;border-right:3px solid #777">{{ turno.fecha }}</td>                
-      <td style="border-right:3px solid #777"><a href="{% url 'turnos:paciente_listar' turno.persona %}"><b>{{turno.persona}}</b></a></td>
+      <td style="border-bottom:3px solid #777;border-right:3px solid #777">{{ turno.fecha }}</td>
+      {% if turno.persona%}                
+        <td style="border-right:3px solid #777"><a href="{% url 'turnos:paciente_listar' turno.persona %}"><b>{{turno.persona}}</b></a></td>
+      {% else %}
+        <td style="border-right:3px solid #777"><b>No Reservado</b></a></td>
+      {% endif %}
     </tr>     
     {% endfor %}
     {% else %}
